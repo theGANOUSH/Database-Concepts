@@ -28,7 +28,10 @@ def main(args):
 	movie_access = imdb.IMDb(accessSystem = 'http')
 	movie_list = movie_access.get_top250_movies()
 	
-	print movie_list[0]
+	movie_access.update(movie_list[0])
+	print movie_list[0].summary()
+	
+	
 	return 0
 
 if __name__ == '__main__':
